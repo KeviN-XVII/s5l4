@@ -29,6 +29,7 @@ public class DivisioneMenuService {
             throw new IllegalArgumentException("Il nome non può essere vuoto");
         if(divisioneMenuRepository.existsByName(newDivisioneMenu.getName()))
             throw new IllegalArgumentException("Nome già esistente");
+        divisioneMenuRepository.save(newDivisioneMenu);
     }
     public DivisioneMenu findById (long id) {
         return divisioneMenuRepository.findById(id).orElseThrow(()->new NotFoundException(id));

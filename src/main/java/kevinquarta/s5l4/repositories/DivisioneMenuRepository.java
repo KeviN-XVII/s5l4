@@ -10,7 +10,6 @@ import java.util.List;
 @Repository
 public interface DivisioneMenuRepository extends JpaRepository<DivisioneMenu,Long> {
 
-    DivisioneMenu findById (long id);
 
     List<DivisioneMenu> findByName(String name);
 
@@ -22,7 +21,7 @@ public interface DivisioneMenuRepository extends JpaRepository<DivisioneMenu,Lon
 
     List<DivisioneMenu> findByElementoMenuAndName(String elementoMenu, String name);
 
-
+    boolean existsByName (String name);
 
 
 
